@@ -5,7 +5,7 @@ A langont ant simulator in python
 [**Langton's ant**](https://en.wikipedia.org/wiki/Langton%27s_ant) is a two-dimensional universal Turing machine 
 with a very simple set of rules but complex emergent behavior.  
 
-In simplest term, it's just a cellular automation like [**Conway's Game of Life**](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).  
+In simplest term, it's just a cellular automaton like [**Conway's Game of Life**](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).  
 The ant moves in the grid(cells) following very simple rules. 
 The ant has certain orientation in the cell: **up**, **down**, **left**, **right** which is used for turning the direction of the ant.
 
