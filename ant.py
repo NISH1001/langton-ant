@@ -24,7 +24,11 @@ class LangtonAnt:
 
     def _initialize_ant(self, size):
         self.ant_r, self.ant_c = int(self.grid_size/2), int(self.grid_size/2)
-        self.direction = UP
+        # randomize initial direction
+        self.direction = [0, 0]
+        while abs(self.direction[0]) == abs(self.direction[1]) :
+            self.direction = [random.randrange(-1, 2), random.randrange(-1, 2) ]
+        print(self.direction)
 
     def run(self, epoch=10):
         for i in range(epoch):
