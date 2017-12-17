@@ -27,3 +27,16 @@ Following is the representation in the console:
 Use `animator.py` to run the animated(non-console) version of the simulation.
 
 Make sure you have `matplotlib` installed.
+
+-----
+
+## So, what's interesting?
+At first, it might seem unusual due to the random movement of the ant. But that's not it.  
+The mind-blowing thing about this is, if you give ant enough time it will eventually move diagonally.  
+This behavior is so strange because no matter what initial state you start from, the ant will eventually 
+achieve that diagonal state. This is so bizarre, right?  
+
+Here's the snapshot of that behavior  
+
+![Diagonal Movment](fig.jpeg)
+

@@ -23,9 +23,9 @@ class Animator:
 
 
 def main():
-    ant = LangtonAnt(100)
+    ant = LangtonAnt(200)
     animator = Animator(ant)
-    animator.animate(500)
+    animator.animate(50000)
 
 if __name__ == "__main__":
     main()
