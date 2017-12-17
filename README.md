@@ -15,7 +15,12 @@ The ant has certain orientation in the cell: **up**, **down**, **left**, **right
 
 
 ## Usage
-Just run the script `ant.py` for now. You can change the grid size by passing the value during object creation
+Just run the script `ant.py` for now. You can change the grid size by passing the value during object creation.  
+Following is the representation in the console:  
+- **BLACK** ::  0
+- **WHITE** ::  1
+- **ANT**   ::  *
+
 
 
 ## Example
