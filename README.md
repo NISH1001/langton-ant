@@ -36,7 +36,8 @@ The mind-blowing thing about this is, if you give ant enough time it will eventu
 This behavior is so strange because no matter what initial state you start from, the ant will eventually 
 achieve that diagonal state. This is so bizarre, right?  
 
-Here's the snapshot of that behavior  
+Here's the snapshot of that behavior with 2 different initial states: 
 
-![Diagonal Movment](fig.jpeg)
+![Figure 1](fig.jpeg)
+![Figure 2](fig2.jpeg)
 
