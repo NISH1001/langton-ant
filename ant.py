@@ -23,7 +23,6 @@ class LangtonAnt:
         self._initialize_ant(grid_size)
 
     def _initialize_ant(self, size):
-        #self.ant_r, self.ant_c = random.randint(0, size), random.randint(0, size)
         self.ant_r, self.ant_c = int(self.grid_size/2), int(self.grid_size/2)
         self.direction = UP
 

@@ -24,6 +24,6 @@ Following is the representation in the console:
 - **ANT**   ::  *
 
 ### Animated Version
-Use `ant_matplot.py` to run the animated(non-console) version of the simulation.
+Use `animator.py` to run the animated(non-console) version of the simulation.
 
 Make sure you have `matplotlib` installed.
