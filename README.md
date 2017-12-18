@@ -1,5 +1,5 @@
-# langont-ant
-A langont ant simulator in python
+# langton-ant
+A Langton's ant simulator in python
 
 ## Introduction
 [**Langton's ant**](https://en.wikipedia.org/wiki/Langton%27s_ant) is a two-dimensional universal Turing machine 

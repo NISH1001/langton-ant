@@ -8,6 +8,8 @@ DOWN = [0, -1]
 LEFT = [-1, 0]
 RIGHT = [1, 0]
 
+directions = [UP, DOWN, LEFT, RIGHT]
+
 def rotate_clockwise(vec):
     return [ vec[1], -vec[0] ]
 
@@ -25,9 +27,7 @@ class LangtonAnt:
     def _initialize_ant(self, size):
         self.ant_r, self.ant_c = int(self.grid_size/2), int(self.grid_size/2)
         # randomize initial direction
-        self.direction = [0, 0]
-        while abs(self.direction[0]) == abs(self.direction[1]) :
-            self.direction = [random.randrange(-1, 2), random.randrange(-1, 2) ]
+        self.direction = random.choice(directions)
         print(self.direction)
 
     def run(self, epoch=10):
