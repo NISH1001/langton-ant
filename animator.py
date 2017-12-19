@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from ant import LangtonAnt
+from multiant import MultiLangtonAnt
 import matplotlib.pyplot as plt
 from matplotlib import animation
 
@@ -23,9 +24,14 @@ class Animator:
 
 
 def main():
+    """
     ant = LangtonAnt(200)
     animator = Animator(ant)
     animator.animate(50000)
+    """
+    ants = MultiLangtonAnt(3, 200)
+    animator = Animator(ants)
+    animator.animate(10000)
 
 if __name__ == "__main__":
     main()

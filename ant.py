@@ -17,6 +17,10 @@ def rotate_counterclock(vec):
     return [ -vec[1], vec[0] ]
 
 class LangtonAnt:
+    """
+        Langton's Ant Simulator
+    """
+
     BLACK = 0
     WHITE = 1
     def __init__(self, grid_size):
@@ -35,14 +39,18 @@ class LangtonAnt:
             print("Epoch ==> {} :: BLACK:0 :: WHITE:1".format(i))
             print("="*40)
             print(self)
-            self._step()
+            self.step()
             time.sleep(0.1)
             print("="*40)
         print("Final state...")
         print("="*40)
         print(self)
 
-    def _step(self):
+    def step(self):
+        """
+            Run for single time step.
+            Transition from time t to (t+1)
+        """
         r, c = self.ant_r, self.ant_c
         if self.grid[r][c] == LangtonAnt.WHITE:
             self.direction = rotate_counterclock(self.direction)
