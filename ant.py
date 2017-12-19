@@ -51,15 +51,8 @@ class LangtonAnt:
             self.direction = rotate_clockwise(self.direction)
             self.grid[r][c] = LangtonAnt.WHITE
 
-        if self.direction == UP:
-            r -= 1
-        elif self.direction == DOWN:
-            r += 1
-        elif self.direction == LEFT:
-            c -= 1
-        else:
-            c += 1
-        self.ant_r, self.ant_c = r, c
+        self.ant_r -= self.direction[1]
+        self.ant_c += self.direction[0]
 
     def __str__(self):
         r, c = self.ant_r, self.ant_c
