@@ -1,50 +1,55 @@
 #!/usr/bin/env python3
 
-from ant import LangtonAnt
+from ant import directions, rotate_clockwise, rotate_counterclock
 import matplotlib.pyplot as plt
 from matplotlib import animation
 
 import random
 
 class MultiLangtonAnt:
-    """
-        Wrapper over single Lanton's Ant
-    """
-    def __init__(self, num_ant=2, grid_size=10):
+    BLACK = 0
+    WHITE = 1
+
+    def __init__(self, num_ant=2, grid_size=25):
         self.num_ant = num_ant
         self.grid_size = grid_size
-        # the global grid
-        self.grid = [ [ LangtonAnt.WHITE for j in range(grid_size) ] for i in range(grid_size)  ]
+        self.grid = [ [ MultiLangtonAnt.WHITE for j in range(self.grid_size) ] for i in range(self.grid_size)  ]
         self._spawn()
 
     def _spawn(self):
-        """
-            Spwan 'n' number of ants in random place
-        """
-        self.ants = []
+        self.positions = []
+        self.directions = []
         border_gap = int(self.grid_size/3)
         for i in range(self.num_ant):
-            ant = LangtonAnt(self.grid_size)
-            ant.ant_r = random.randrange(border_gap, self.grid_size-border_gap)
-            ant.ant_c = random.randrange(border_gap, self.grid_size-border_gap)
-            self.ants.append(ant)
+            r = random.randrange(border_gap, self.grid_size-border_gap)
+            c = random.randrange(border_gap, self.grid_size-border_gap)
+            self.positions.append([r, c])
+            self.directions.append(random.choice(directions))
+        print(self.positions, self.directions)
+
+    def _step_single_ant(self, i):
+        r, c = self.positions[i][0], self.positions[i][1]
+        if self.grid[r][c] == MultiLangtonAnt.WHITE:
+            self.directions[i] = rotate_counterclock(self.directions[i])
+            self.grid[r][c] = MultiLangtonAnt.BLACK
+        else:
+            self.directions[i] = rotate_clockwise(self.directions[i])
+            self.grid[r][c] = MultiLangtonAnt.WHITE
+
+        self.positions[i][0] -= self.directions[i][1]
+        self.positions[i][1] += self.directions[i][0]
 
     def _step(self):
-        for i, ant in enumerate(self.ants):
-            self.ants[i].step()
-            # now update the global grid state using the individual ant's grid
-            for row in range(self.grid_size):
-                for col in range(self.grid_size):
-                    self.grid[row][col] |= self.ants[i].grid[row][col]
-            self.ants[i].grid = self.grid
+        for i in range(self.num_ant):
+            self._step_single_ant(i)
 
     def run(self, epoch=1000):
-        for i in range(epoch):
+        for i in range(self.num_ant):
             self._step()
 
 def main():
     ants = MultiLangtonAnt(3, 200)
-    ants.run(1000)
+    ants.run()
 
 if __name__ == "__main__":
     main()
