@@ -17,14 +17,20 @@ The ant has certain orientation in the cell: **up**, **down**, **left**, **right
 ## Usage
 
 ### Console Version
-Just run the script `ant.py` for now. You can change the grid size by passing the value during object creation.  
 Following is the representation in the console:  
 - **BLACK** ::  0
 - **WHITE** ::  1
 - **ANT**   ::  *
 
+#### Single ANT
+Run the script `ant.py` for now. You can change the grid size by passing the value during object creation.  
+
+#### Multiple Ant
+Run the script `multiant.py` for now. You can change the grid size by passing the value during object creation.  
+
 ### Animated Version
-Use `animator.py` to run the animated(non-console) version of the simulation.
+Use `animator.py` to run the animated(non-console) version of the simulation. You can pass the number of ants during the 
+object's construction.
 
 Make sure you have `matplotlib` installed.
 
