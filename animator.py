@@ -4,6 +4,8 @@ from multiant import MultiLangtonAnt
 import matplotlib.pyplot as plt
 from matplotlib import animation
 
+import sys
+
 class Animator:
     def __init__(self, ant):
         self.ant = ant
@@ -23,7 +25,14 @@ class Animator:
 
 
 def main():
-    ants = MultiLangtonAnt(5, 500)
+    n = sys.argv[1:]
+    if not n:
+        n = 2
+        print("Using default ant number :: {}".format(n))
+    else:
+        n = int(n[0])
+        print("Using ant number :: {}".format(n))
+    ants = MultiLangtonAnt(n, 100 * n)
     animator = Animator(ants)
     animator.animate(50000)
 

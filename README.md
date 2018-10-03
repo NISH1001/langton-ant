@@ -34,6 +34,12 @@ object's construction.
 
 Make sure you have `matplotlib` installed.
 
+Give total number of ants **n** as an argument to animator script as:
+```bash
+python animator.py 5
+```
+
+This will spawn 5 ants and then run the Langton Ant's simulation. The default value is `2`.
 -----
 
 ## So, what's interesting?
